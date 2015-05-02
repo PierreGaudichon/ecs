@@ -59,7 +59,7 @@ module.exports = class Engine
 	constructor: (opt) ->
 		@data = {}
 		@playing = false
-		@lastTime = Engine.now()
+		@lastTime = 0
 		@entities = []
 		@systems = []
 
@@ -122,10 +122,11 @@ module.exports = class Engine
 	# Animate the engine by calling tick at regular interval (60 Hz). Computes
 	# the time passed between each call.
 	#
-	anim: (t)->
-		Engine.requestAnimationFrame (t) =>
-			@anim t if @playing
+	anim: ->
+		Engine.requestAnimationFrame =>
+			@anim() if @playing
 
+		t = Engine.now()
 		delta = (t - @lastTime) / 1000
 		@lastTime = t
 		@tick delta
@@ -141,7 +142,7 @@ module.exports = class Engine
 		unless @playing
 			@lastTime = Engine.now()
 			@playing = true
-			@anim Engine.now()
+			@anim()
 		null
 
 
