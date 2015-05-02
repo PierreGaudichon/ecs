@@ -1,0 +1,22 @@
+{
+  "name": "ECS",
+  "version": "0.1.0",
+  "description": "A headless ECS framework.",
+  "keywords": [
+    "ECS",
+    "framework",
+    "game"
+  ],
+  "author": "Pierre Gaudichon",
+  "license": "MIT",
+
+  "main": "bin/index.js",
+  "scripts": {
+  	"install": "npm run build",
+  	"build": "sh ./build_system.sh"
+  },
+
+  "directories": {
+    "doc": "doc"
+  }
+}
