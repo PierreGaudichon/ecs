@@ -16,13 +16,13 @@ module.exports = class System
 
 
 
-	# constructor :: ... -> System
+	# constructor :: Engine, ... -> System
 	#
 	# Should not be extended.
 	#
-	constructor: (opt) ->
+	constructor: (@engine, opt...) ->
 		@data = {}
-		@initialize opt if @initialize?
+		@initialize.apply @, opt if @initialize?
 
 
 

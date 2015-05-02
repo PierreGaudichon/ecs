@@ -22,8 +22,9 @@ class Engine
 
 
 class System
+	engine: Engine
 	data: Hash
-	constructor: () -> System
+	constructor: (Engine, ...) -> System
 	toJSON: -> Hash
 
 	initialize: () -> null
