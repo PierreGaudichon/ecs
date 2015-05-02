@@ -40,7 +40,7 @@ class Entity
 	components: {Component}
 	constructor: () -> Entity
 	as: (String) -> Boolean
-	as: ([String]) -> Boolean
+	asAll: ([String]) -> Boolean
 	attach: (Component) -> null
 	detach: (Component) -> null
 	get: (String, String) -> A

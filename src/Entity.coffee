@@ -27,18 +27,22 @@ module.exports = class Entity
 
 
 
-	# as :: String | [String] -> Boolean
+	# as :: String -> Boolean
 	#
-	# Tell if the entity as all the given components. The string is the name
+	# Tell if the entity as the given component. The string is the name
 	# of the class.
 	#
-	# TODO : test that.
-	#
 	as: (k) ->
-		switch k.constructor
-			when String then @components[k]?
-			when Array then k.every (n) => @components[n]?
-			else false
+		@components[k]?
+
+
+
+	# asAll :: [String] -> Boolean
+	#
+	# Tell if tne entity as all the given components.
+	#
+	asAll: (ks) ->
+		ks.every (k) => @as k
 
 
 
