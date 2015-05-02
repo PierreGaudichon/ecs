@@ -59,7 +59,7 @@ module.exports = class Engine
 	constructor: (opt) ->
 		@data = {}
 		@playing = false
-		@lastTime = 0
+		@lastTime = Engine.now()
 		@entities = []
 		@systems = []
 
