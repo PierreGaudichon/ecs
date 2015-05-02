@@ -29,6 +29,10 @@ module.exports = class Engine
 		lastTime = 0
 		vendors = ['webkit', 'moz']
 		x = 0
+
+		if window.requestAnimationFrame?
+			ret = window.requestAnimationFrame
+
 		while x < vendors.length and !ret?
 			ret = window[vendors[x] + 'RequestAnimationFrame']
 			++x
