@@ -122,7 +122,7 @@ module.exports = class Engine
 	# Animate the engine by calling tick at regular interval (60 Hz). Computes
 	# the time passed between each call.
 	#
-	anim: (t = Engine.now())->
+	anim: (t)->
 		Engine.requestAnimationFrame (t) =>
 			@anim t if @playing
 
@@ -141,7 +141,7 @@ module.exports = class Engine
 		unless @playing
 			@lastTime = Engine.now()
 			@playing = true
-			@anim()
+			@anim Engine.now()
 		null
 
 
